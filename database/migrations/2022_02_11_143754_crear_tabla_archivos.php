@@ -15,6 +15,13 @@ class CrearTablaArchivos extends Migration
     {
         Schema::create('archivos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('model_id');
+            $table->string('model_type', '150');
+            $table->string('ruta', '150');
+            $table->string('extension', '10');
+            $table->integer('peso');
+            $table->boolean('local')->default(1);
+
             $table->timestamps();
         });
     }
